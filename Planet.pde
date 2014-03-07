@@ -1,3 +1,5 @@
+//danielle
+
 public class Planet{
   int[] loc;
   color myColor;
@@ -16,7 +18,7 @@ public class Planet{
     name = "a planet";
     loc[0] = 100;
     loc[1] = 200;
-    myColor = color(255,255,0);
+    myColor = color(255, 255 ,204); //controls the color of the sun
     mySize = 50;
     dx = dy = 10;
   }
@@ -44,7 +46,7 @@ public class Meteor extends Planet {
     super();
     println("actually im a meteor");
     
-    myColor = color( random(255), random(255), random(255) );
+    myColor = color( 204 ,102, random (255) ); //controls the color of the meteor planets
     
     dx = (int) random(3, 17);
     dy = (int) random(3, 17);
