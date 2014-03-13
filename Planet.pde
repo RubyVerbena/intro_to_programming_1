@@ -14,13 +14,13 @@ public class Planet{ //defines that there will be an object named Planet
   }
   
   void assignDefaultValues(){  
-    println("assigning values");
-    name = "a planet";
-    loc[0] = 200;
+    println("assigning values");  //tells us that we're assigning the values of the planet
+    name = "a planet";  //names the planet
+    loc[0] = 200;  
     loc[1] = 200;
     myColor = color(255, 255 ,204); //defines the color of the earth
     mySize = 50; //defines the size of the earth
-    dx = dy = 100;
+    dx = dy = 900;
   }
   
   void drawPlanet(){
