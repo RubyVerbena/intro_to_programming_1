@@ -40,8 +40,27 @@ void mouseClicked() {  //when you click the mouse
 }
 
 void keyPressed() { //when you press a key on the keyboard
+
   if ( !mets.isEmpty() ) {
     mets.remove(0); //take away a meteor
+  if ( key == 'q')  {
+    if ( !mets.isEmpty() )
+    println("no meteors follow you");
+      mets.remove(30);
+  } else if ( key == 'p') {
+    for ( Meteor met : mets) {
+      if (!met.followMouse ) {
+        met.followMouse = true;
+        println("meteor is following you");
+          break;
+      }
+    }
+    } else if ( key == 'y') {
+      for ( Meteor met : mets) { 
+      met.followMouse = false;
+      println("meteor has gone away");
+      break;
+      }
+    }
   }
 }
-

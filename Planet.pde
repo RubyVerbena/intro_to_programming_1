@@ -7,20 +7,20 @@ public class Planet{ //defines that there will be an object named Planet
   int dx, dy; 
   String name;
   
-  public Planet(){  //tells us that we're going to make a planet
+  public Planet(){
     println("making a planet");
     loc = new int[2];
     assignDefaultValues();
   }
   
-  void assignDefaultValues(){  
-    println("assigning values");  //tells us that we're assigning the values of the planet
-    name = "a planet";  //names the planet
-    loc[0] = 200;  
+  void assignDefaultValues(){
+    println("assigning values");
+    name = "a planet";
+    loc[0] = 200;
     loc[1] = 200;
     myColor = color(255, 255 ,204); //defines the color of the earth
     mySize = 50; //defines the size of the earth
-    dx = dy = 900;
+    dx = dy = 100;
   }
   
   void drawPlanet(){
@@ -40,9 +40,9 @@ public class Planet{ //defines that there will be an object named Planet
 
 public class Meteor extends Planet { //extends the definition of planet to include meteors
   
-  boolean followMouse;  //defines the command followMouse as either true or false
+  boolean followMouse;  
   
-  public Meteor(){ 
+  public Meteor(){
     super();
     println("actually im a meteor"); //this prints on the screen below when you click the screen
     
