@@ -1,9 +1,9 @@
 //danielle tanguis
 
-Planet earth; 
-Planet sun;
+Planet earth; // class Planet named earth
+Planet sun; // class Planet named sun
 
-ArrayList<Meteor> mets;
+ArrayList<Meteor> mets; //this line defines the ArrayList of meteor objects and calls them mets
 
 void setup() {
   size(600, 600); //defines the area of the void (even though the area the planets uses doesn't change)
@@ -14,7 +14,7 @@ void setup() {
   earth.myColor = color(0, 0, 255); //defines the color of the earth
   earth.dx = earth.dy = -25;  //defines the speed of the earth
   earth.loc[0] = 88; //defines the start location of the earth in the sky
-  
+
 
   sun = new Planet(); //defines the sun as a type of planet
   sun.name = "Sun"; //defines the sun's name as Sun
@@ -39,28 +39,39 @@ void mouseClicked() {  //when you click the mouse
   mets.add( new Meteor() ); //draw a new meteor
 }
 
-void keyPressed() { //when you press a key on the keyboard
+void keyPressed() { //looks for when you press a key on the keyboard
 
-  if ( !mets.isEmpty() ) {
-    mets.remove(0); //take away a meteor
-  if ( key == 'q')  {
-    if ( !mets.isEmpty() )
-    println("no meteors follow you");
-      mets.remove(30);
-  } else if ( key == 'p') {
-    for ( Meteor met : mets) {
-      if (!met.followMouse ) {
-        met.followMouse = true;
-        println("meteor is following you");
-          break;
-      }
+    if ( key == 'q' ) //if the key pressed is q
+  {   
+    if ( !mets.isEmpty() ) //the array is not empty
+    { 
+      mets.remove(0); //and remove a meteor
     }
-    } else if ( key == 'y') {
-      for ( Meteor met : mets) { 
-      met.followMouse = false;
-      println("meteor has gone away");
-      break;
+  } 
+  else if ( key == 'p' ); //if the key pressed is p
+  { 
+    for ( int i = 0; i < mets.size(); i++)  //start for loop that tells to check for the amount of meteors in the field
+      {
+      Meteor met = (Meteor) mets.get(i);   //and add one
+      if (!met.followMouse ) // if that meteor is not following the mouse
+        { 
+        met.followMouse = true; //then make the meteor follow the mouse
+        break; //and break out of the for loop when the condition is satisfied.
+        }
+      }
+  }   
+  else if ( key == 'y' ); //if the key pressed is y
+    {  
+    for ( int i = 0; i < mets.size(); i++) //start for loop that checks for the meteors in the field
+      { 
+      Meteor met = (Meteor) mets.get(i);  
+      if ( met.followMouse) //if the meteor is following the mouse
+        { 
+        met.followMouse = false  //stop following the mouse
+        break; //break out of for loop
+        }
       }
     }
   }
-}
+  
+

@@ -44,9 +44,9 @@ public class Meteor extends Planet { //extends the definition of planet to inclu
   
   public Meteor(){
     super();
-    println("actually im a meteor"); //this prints on the screen below when you click the screen
+    println("I am a meteor"); //this prints on the screen below when you click the screen
     
-    myColor = color( 204 ,000, random (255) ); //controls the color of the meteor planets. 
+    myColor = color( 204 , 000, random (255) ); //controls the color of the meteor planets. 
     //I changed the last variable of the code to random so that I get a range of pinks and reds.
     
     dx = (int) random(3, 17); 
@@ -65,7 +65,7 @@ public class Meteor extends Planet { //extends the definition of planet to inclu
     else{
       super.drawPlanet();
     }
-    
+  }
   }
   
 }
